@@ -1,0 +1,12 @@
+
+public class DoMath {
+	public static void main(String[] args){
+		Calculate.square(5);
+		System.out.println(square);
+		Calculate.cube(3);
+		Calculate.average(3, 4);
+		Calculate.average(1, 2, 3);
+		Calculate.toDegrees(3.14159/2);
+		
+	}
+}
