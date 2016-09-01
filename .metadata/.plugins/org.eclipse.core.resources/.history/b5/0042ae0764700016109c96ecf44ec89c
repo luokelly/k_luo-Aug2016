@@ -10,6 +10,5 @@ public class DoMath {
 		Calculate.discriminant(3, 4, 5);
 		Calculate.toImproperFrac(1, 1, 2);
 		Calculate.foil(2, 3, 6, 7, "n");
-		Calculate.isDivisibleBy(2, 1);
 	}
 }

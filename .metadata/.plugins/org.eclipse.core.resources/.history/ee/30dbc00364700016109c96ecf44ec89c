@@ -38,28 +38,11 @@ public class Calculate {
 		int firstFoil = a * c;
 		int secFoil = (a * d) + (b * c); 
 		int thirdFoil = (b * d);
-		return(firstFoil + x + " ^2 " + secFoil + x + thirdFoil);
+		String answer = firstFoil + x + " ^2 " + secFoil + x + thirdFoil;
+		return(answer);
 	}
 	
-	public static boolean isDivisibleBy(int num, int secNum){
-		if(num % secNum == 0){
-			return(true);
-		}else{
-			return(false);
-		}
+	public static int isDivisibleBy(int num, int secNum){
+		
 	}
-	
-	public static double absValue(double num){
-		if()
 	}
-	
-	public static int max(int num, int secNum){
-		if(num > secNum){
-			return(num);
-		}else{
-			return(secNum);
-		}
-	}
-	
-	public static int
-}

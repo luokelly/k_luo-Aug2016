@@ -33,33 +33,4 @@ public class Calculate {
 		int numeratorOfAnswer = wholeNum * denominator + numerator;
 		return(numeratorOfAnswer + "/" + denominator);
 	}
-	
-	public static String foil(int a, int b, int c, int d, String x){
-		int firstFoil = a * c;
-		int secFoil = (a * d) + (b * c); 
-		int thirdFoil = (b * d);
-		return(firstFoil + x + " ^2 " + secFoil + x + thirdFoil);
-	}
-	
-	public static boolean isDivisibleBy(int num, int secNum){
-		if(num % secNum == 0){
-			return(true);
-		}else{
-			return(false);
-		}
-	}
-	
-	public static double absValue(double num){
-		if()
-	}
-	
-	public static int max(int num, int secNum){
-		if(num > secNum){
-			return(num);
-		}else{
-			return(secNum);
-		}
-	}
-	
-	public static int
-}
+
