@@ -11,9 +11,5 @@ public class DoMath {
 		Calculate.toImproperFrac(1, 1, 2);
 		Calculate.foil(2, 3, 6, 7, "n");
 		Calculate.isDivisibleBy(2, 1);
-		Calculate.absValue(-1);
-		Calculate.max(1,2);
-		Calculate.max(1, 2, 3);
-		Calculate.min(1, 2);
 	}
 }

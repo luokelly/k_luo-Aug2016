@@ -84,17 +84,4 @@ public class Calculate {
 			return(secNum);
 		}
 	}
-	
-	public static double round2(double num){
-		//add 5
-		double round = num + .005;
-		double hundreds = num * 100;
-		//change to integer
-		//divide by 100
-		int ;
-		
-		
-	}
-	
-	
 }

@@ -50,13 +50,7 @@ public class Calculate {
 	}
 	
 	public static double absValue(double num){
-		double makePositive = num * -1;
-		if(num < 0){
-			double positive = num * makePositive;
-			return(positive);
-		}else{
-			return(num);
-		}
+		if()
 	}
 	
 	public static int max(int num, int secNum){
@@ -67,34 +61,5 @@ public class Calculate {
 		}
 	}
 	
-	public static double max(double num, double secNum, double thirdNum){
-		if(num < thirdNum && secNum < thirdNum){
-			return(thirdNum);
-		}if(thirdNum < num && secNum < num){
-			return(num);
-		}else{
-			return(secNum);
-		}
-	}
-	
-	public static int min(int num, int secNum){
-		if(num < secNum){
-			return(num);
-		}else{
-			return(secNum);
-		}
-	}
-	
-	public static double round2(double num){
-		//add 5
-		double round = num + .005;
-		double hundreds = num * 100;
-		//change to integer
-		//divide by 100
-		int ;
-		
-		
-	}
-	
-	
+	public static int
 }
