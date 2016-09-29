@@ -86,14 +86,13 @@ public class Calculate {
 	}
 	
 	public static double round2(double num){
-		//add 5
-		double round = num + .005;
+
+		double round = num + .5;
 		double hundreds = round * 100;
 		int decimal = (int)(hundreds/10);
 		double result = (double)(decimal);
 		return(result);
-		//change to integer
-		//divide by 10
+
 	}
 	
 	
