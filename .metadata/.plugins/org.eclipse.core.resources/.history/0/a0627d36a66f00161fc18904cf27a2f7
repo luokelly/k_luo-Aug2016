@@ -1,8 +1,0 @@
-
-public class DoMath {
-	public static void main(String[] args){
-		Calculate.square(5);
-		Calculate.cube(2);
-		Calculate.average(3, 4);
-	}
-}

@@ -14,51 +14,7 @@ import java.util.Arrays;
 public class ArrayLab3 
 
 {
-	/*
-
-	 * Write a main method that will 
-
-Contain
-
-integer arrays a1, a2, sumArr, appendArr, removeArr
-
-int variables appendNum, removeIdx, sumOfEvens
-
-Carry out the following actions
-
-Declare array a1 containing the values (5, 10, 15, 20, 25, 30, 35, 40) 
-
-and array a2 containing the values (7, 14, 21, 28, 35, 42, 49, 56)
-
-Form sumArr by calling the sum method with a1 and a2 as inputs
-
-Declare int appendNum and set it to 200.
-
-Form appendArr by calling the append method with a1 and appendNum as inputs
-
-Declare int removeIdx and set it to 5.
-
-Form removeArr by calling remove with a2 and removeIdx
-
-Form sumOfEvens by calling sumEven with appendArr as the input
-
-Call rotateRight with a1 as the input
-
-On their own lines print out (use Arrays.toString to transform arrays into a printable strings) :
-
-sumArr
-
-appendArr
-
-removeArr
-
-sumOfEvens (an int you don?t need Arrays.toString)
-
-a1
-
-	 */
-
-	public static void main(String[] args) 
+	public static void main(String[] args) // calls and declarations
 
 	{
 
@@ -178,32 +134,33 @@ a1
 
 	{
 
-		int offset = 0;	// declare variable to check for offset
+		int offset = 0;	// variable used to check for offset when copying arrays over
 
-		int[] newArr = new int[arr.length - 1];	// array with one less value
-		for(int i = 0; i < newArr.length; i++){	// for loop goes through each value
+		int[] newArr = new int[arr.length - 1];	// creates new array that is one less value
 
-			if (i != idx){	// tests that index value != to idx
+		for (int i = 0; i < newArr.length; i++){	// for loop goes through each value
 
-				newArr[i] = arr[i];	// newArr = previous indices if value != idx
+			if (i != idx){	// tests to see if the index value is not equal to idx
+
+				newArr[i] = arr[i];	// directly copies over array values if i != idx
 
 			}else{
 
-				newArr[i] = arr[i + 1];	// if i == idx, skip an index
+				newArr[i] = arr[i + 1];	// if i == idx, the index for the new array skips one from the given array
 
-				offset++;	// offset is increased by 1
+				offset++;	// now the copying is offset, so offset is increased by 1
 
 			}
 
-			if (offset > 0){	// tests for any offset
+			if (offset > 0){	// tests to ssee if the copying is offset at all
 
-				newArr[i] = arr[ i + 1];	// i is incremented by 1 since there is offset
+				newArr[i] = arr[ i + 1];	// if true, the array copying after that will all be offset by 1, hence i+1
 
 			}
 
 		}
 
-		return newArr;
+		return (newArr);
 
 	}
 
@@ -224,19 +181,19 @@ a1
 
 		assert (arr.length > 0);
 
-		int sum = 0;	// declare sum variable
+		int sum = 0;	// create variable for the summation
 
-		for (int i = 0; i<= arr.length; i++){	// for loop goes through each index
+		for (int i = 0; i<= arr.length; i++){	// loop goes through each index
 
-			if (i % 2 == 0){	// tests index if even
+			if (i % 2 == 0){	// tests to see if the index is even
 
-				sum += arr[i];	// add that even value to overall sum
+				sum += arr[i];	// if true, add that value to the summation
 
 			}
 
 		}
 
-		return sum; 
+		return sum;
 
 
 	}
@@ -262,20 +219,63 @@ a1
 
 		assert (arr.length > 0);
 
-		int lastNum = arr[arr.length - 1];	// declare variable for last value that wouldn't be added
+		int temp = arr[arr.length - 1];	// saves the last value bc it will be lost during the rotation
 
-		for (int i = arr.length - 1; i >= 1; i--){	// for loops goes through each index
+		for (int i = arr.length - 1; i >= 1; i--){	// loops through each index of the array
 
-			arr[i] = arr[i - 1];	// values being replaced to the right
+			arr[i] = arr[i - 1];	// rotates all values to the right
 
 		}
 
-		arr[0] = lastNum;	// last value placed in the front
+		arr[0] = temp;	// adds the last value to the beginning
 
 	}
 
 
 
+	/*
+
+	 * Write a main method that will 
+
+Contain
+
+integer arrays a1, a2, sumArr, appendArr, removeArr
+
+int variables appendNum, removeIdx, sumOfEvens
+
+Carry out the following actions
+
+Declare array a1 containing the values (5, 10, 15, 20, 25, 30, 35, 40) 
+
+and array a2 containing the values (7, 14, 21, 28, 35, 42, 49, 56)
+
+Form sumArr by calling the sum method with a1 and a2 as inputs
+
+Declare int appendNum and set it to 200.
+
+Form appendArr by calling the append method with a1 and appendNum as inputs
+
+Declare int removeIdx and set it to 5.
+
+Form removeArr by calling remove with a2 and removeIdx
+
+Form sumOfEvens by calling sumEven with appendArr as the input
+
+Call rotateRight with a1 as the input
+
+On their own lines print out (use Arrays.toString to transform arrays into a printable strings) :
+
+sumArr
+
+appendArr
+
+removeArr
+
+sumOfEvens (an int you don?t need Arrays.toString)
+
+a1
+
+	 */
 
 
 	
