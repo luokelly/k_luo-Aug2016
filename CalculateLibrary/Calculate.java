@@ -1,46 +1,70 @@
+/**
+ * 
+ */
 
+/**
+	Kelly Luo
+	12/4/16
+	APCS2 
+	This code is a library for math calculation methods.
+ *
+ */
 public class Calculate {
-	public static int square(int number){
-		return(number*number);
+
+	/**
+	 * @param args
+	 */
+	//multiplies number by itself twice
+	public static int square (int num){
+		return(num*num);
 	}
-	
-	public static int cube(int number){
-		return(number*number*number);
+	//multiplies number by itself 3 times
+	public static int cube(int num){
+		return(num*num*num);
 	}
-	
+	//takes average of two numbers
 	public static double average(double num, double secNum){
-		return(num + secNum / 2);
+		return((num + secNum) / 2);
 	}
-	
+	//takes average of three numbers
 	public static double average(double num, double secNum, double thirdNum){
-		return(num + secNum + thirdNum / 3);
+		return((num + secNum + thirdNum) / 3);
 	}
-	
+	//turns radian into degrees
 	public static double toDegrees(double num){
 		return(num * (180/3.14159));
 	}
-	
+	//turns degrees into radians 
 	public static double toRadians(double num){
 		return(num * (3.14159/180));
 	}
-	
+	//returns discriminant of three numbers
 	public static double discriminant(double a, double b, double c){
 		return(b * b - (4 * a * c));
 	}
-	
+	//turns mixed number to improper fraction
 	public static String toImproperFrac(int wholeNum, int numerator, int denominator){
 
 		int numeratorOfAnswer = wholeNum * denominator + numerator;
 		return(numeratorOfAnswer + "/" + denominator);
 	}
-	
+	//turns improper fraction to mixed number
+	public static String toMixedNum(int numerator, int denominator){
+		int mixedNum = numerator / denominator;
+		int remainder = numerator % denominator;
+		if(remainder == 0){
+			return(mixedNum + "");
+		}
+		return(mixedNum + "_" + remainder + "/" + denominator);
+	//foils with a, b, c, d, and variable given
+	}
 	public static String foil(int a, int b, int c, int d, String x){
 		int firstFoil = a * c;
-		int secFoil = (a * d) + (b * c); 
+		int secFoil = a * d + b * c; 
 		int thirdFoil = (b * d);
-		return(firstFoil + x + " ^2 " + secFoil + x + thirdFoil);
+		return(firstFoil + x + "^2" + " + " + secFoil + x + " + " + thirdFoil);
 	}
-	
+	//returns true or false if first number is divisible by second number
 	public static boolean isDivisibleBy(int num, int secNum){
 		if(num % secNum == 0){
 			return(true);
@@ -48,9 +72,9 @@ public class Calculate {
 			return(false);
 		}
 	}
-	
+	//returns abolute value of a number
 	public static double absValue(double num){
-		double makePositive = num * -1;
+		double makePositive = -1;
 		if(num < 0){
 			double positive = num * makePositive;
 			return(positive);
@@ -58,7 +82,7 @@ public class Calculate {
 			return(num);
 		}
 	}
-	
+	//returns the max of two numbers
 	public static int max(int num, int secNum){
 		if(num > secNum){
 			return(num);
@@ -66,7 +90,7 @@ public class Calculate {
 			return(secNum);
 		}
 	}
-	
+	//returns the max of three numbers
 	public static double max(double num, double secNum, double thirdNum){
 		if(num < thirdNum && secNum < thirdNum){
 			return(thirdNum);
@@ -76,7 +100,7 @@ public class Calculate {
 			return(secNum);
 		}
 	}
-	
+	//returns the minimum of two numbers
 	public static int min(int num, int secNum){
 		if(num < secNum){
 			return(num);
@@ -84,16 +108,100 @@ public class Calculate {
 			return(secNum);
 		}
 	}
-	
+	//rounds number to the tenth place
 	public static double round2(double num){
 
-		double round = num + .5;
-		double hundreds = round * 100;
-		int decimal = (int)(hundreds/10);
-		double result = (double)(decimal);
+		
+		double hundreds = num * 100;
+		double round = hundreds + .5;
+		round += num;
+		double result = (round / 100);
 		return(result);
 
 	}
-	
-	
+	//returns product of a number to the power given 
+	public static double exponent(int base, double power){
+		if(power < 0){
+			throw new IllegalArgumentException("The power must be positive.");
+		}
+		double result = 1.0;
+		if(power == 0){
+			return(1);
+		}
+		for(int i = 1; i <= power; i++){
+			result *= base;
+		}
+		return(result);
+	}
+	//returns a number factorial
+	public static int factorial(int num){
+		if(num < 0){
+			throw new IllegalArgumentException("The number must be positive.");
+		}
+		int result = 1;
+		if(num == 0){
+			return(1);
+		}
+		for(int i = 1; i <= num; i++){
+			result *= i;
+		}
+		return(result);
+	}
+	//returns true or false if number is prime
+	public static boolean isPrime(int num){
+		boolean makeSure;
+		for (int i = num - 1; i > 1; i--){
+			makeSure = Calculate.isDivisibleBy(num, i);
+			if(makeSure == true){
+				return(false);
+			}
+		}
+		return(true);		
+	}
+	//returns greatest common factor between two numbers
+	public static int gcf(int a, int b){
+        int gcf = 1;
+        for(int i = 1; i <= a; i++){
+            if(isDivisibleBy(a,i) && isDivisibleBy(b,i)){
+                gcf = i;
+            }
+        }
+        return(gcf);
+    }
+	//returns the squareroot of a number 
+	public static double sqrt(double num){
+		if (num < 0){
+			throw new IllegalArgumentException("Number must be positive");
+		}
+		for(double i = 0.01; i <= num; i += 0.01){
+			double square = i * i;
+				if (Calculate.absValue(square - num) <= .01){
+					return Calculate.round2(i);
+				} 
+		}
+		return(num);
+	}
+	//returns the quadratic formula, given a, b, and c
+	//uses round2, sqrt, discriminant, min, max
+    public static String quadForm(int a, int b, int c){
+        double firstRoot;
+        double secRoot;
+        int discrim = (int) Calculate.discriminant(a, b, c);
+        if (discrim < 0){ //if discrim is negative, then no real roots
+            return ("No real roots");
+        }
+        //if discrim greater than or equal to 0 then find first and second root
+        firstRoot = ((b * (-1)) + sqrt(discrim)) / (2 * a);
+        secRoot = ((b * (-1)) - sqrt(discrim)) / (2 * a);
+        if(firstRoot == secRoot){
+        	return(firstRoot + "");
+        }
+        if(firstRoot < secRoot){
+        	return round2(firstRoot) + " and " + round2(secRoot);
+        }
+        else{
+        	return round2(secRoot) + " and " + round2(firstRoot);
+        }
+        
+    }
 }
