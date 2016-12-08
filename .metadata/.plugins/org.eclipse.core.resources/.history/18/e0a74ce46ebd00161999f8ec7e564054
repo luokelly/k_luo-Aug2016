@@ -23,11 +23,7 @@ public class FranCalcCheckpoint1 {
     	return splitInput;
     }
     public static int[] parseOperand(String[] splitInput){
-    	int[] operand = new int[2];
-    	String wholeNum = " ";
-    	String numerator = " ";
-    	String denominator = " ";
-    	if()
+    	
     	
     }
 }
